@@ -1,12 +1,11 @@
-import './App.css';
+import React from 'react'
 import Na from './Na';
 import Box from './Box';
 import About from './About';
 import Educ from './Educ';
 import Foot from './Foot';
 
-
-function App() {
+export default function Home() {
   return (
     <>
     <Na/>
@@ -15,7 +14,5 @@ function App() {
     <Educ/> 
     <Foot/> 
     </>
-  );
+  )
 }
-
-export default App;

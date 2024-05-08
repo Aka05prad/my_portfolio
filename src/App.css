@@ -1,38 +1,227 @@
-.App {
-  text-align: center;
+body{
+  background: linear-gradient(135deg, #C33764, #1D2671);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.co {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Adds shadow effect */
+  font-family: Sedan, sans-serif;
+  width: 1150px; /* Specify width */
+  height: 550px; /* Specify height */
+  margin-top: 55px;
+  padding-top: 20px;
+  margin-left: 155px;
 }
 
-.App-link {
-  color: #61dafb;
+.image-container {
+  flex: 0 0 auto; /* Prevents image container from shrinking */
+  perspective: 1000px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s; 
+  
+}
+.image-container:hover img {
+  transform: rotateY(20deg) rotateX(10deg) scale(1.1); /* Apply 3D transformation on hover */
+}
+
+.content {
+  flex: 1; /* Makes content take remaining space */
+  padding: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff; /* Default button color */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button.hovered {
+  background-color: #0056b3; /* New button color on hover */
+}
+
+.abt {
+  display: flex;
+}
+
+.left-side {
+  flex: 1;
+  padding: 20px;
+  margin-top: 22px;
+  font-family: Papyrus, fantasy;
+  font-size: 33px;
+  color: aliceblue;
+  text-align: left;
+}
+
+.left-side h2 {
+  color: bisque;
+
+}
+
+.image-overlay {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-top: 17px;
+  padding-top: 10px;
+  margin-right: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Fade in transition */
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Fade in transition */
+}
+
+.image-overlay:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.image-overlay:hover .text {
+  opacity: 1; /* Show text on hover */
+}
+
+.education-box {
+  background-color: rgb(220, 164, 220);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+}
+
+.education-box h2 {
+  color: #333;
+  font-family: Courier, monospace;
+  text-align: left;
+}
+
+.education-content {
+  margin-top: 15px;
+  text-align: center;
+  font-family: Courier;
+  font-size: 22px;
+}
+
+.education-content p {
+  margin: 5px 0;
+}
+
+hr {
+  border: none; /* Remove default border */
+  height: 1px; /* Set the height of the line */
+  background-color: #333; /* Set the color of the line */
+  margin: 20px 0; /* Add some margin above and below the line */
+}
+
+.footer {
+  background-color: #430b3f;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 47px;
+}
+
+.form-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+
+.btnn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnn:hover {
+  background-color: #0056b3;
+}
+
+.contact-me {
+  flex: 1;
+}
+
+.contact-me p {
+  margin: 5px 0;
+}
+
+.copyright {
+  flex: 1;
+  text-align: right;
+}
+
+.about-me-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+  transform: perspective(1000px) rotateY(10deg); /* Apply perspective and rotation */
+  transition: transform 0.5s ease; /* Add transition for smooth effect */
+}
+
+.about-me-box:hover {
+  transform: perspective(1000px) rotateY(0deg); /* Rotate back to original position on hover */
+}
+
+.about-me-box h2 {
+  color: #333;
+}
+
+.about-me-box p {
+  margin-top: 10px;
+}
+
+.grayscale-image-container {
+  margin-top: 20px;
+}
+
+.grayscale-image {
+  filter: grayscale(100%);
 }
